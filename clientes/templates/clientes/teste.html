@@ -1,0 +1,25 @@
+{% extends 'clientes/base.html' %}
+
+{% block content %}
+        <div class="col-md-8">
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="list-group-item list-group-item-success"
+                            id='item'>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <div class="cont">
+                <a href="{% url 'cliente_new' %}" class="btn btn-primary btn-lg
+                    btn-block">Cadastrar Cliente
+                </a>
+                <a href="{% url 'new_tarefa' %}" class="btn btn-primary btn-lg
+                    btn-block">Cadastrar Compromisso
+                </a>
+                <a href="{% url 'today_task' %}" class="btn btn-primary btn-lg
+                    btn-block">Calendario
+                </a>
+            </div>
+        </div>
+{% endblock %}

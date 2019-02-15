@@ -1,0 +1,14 @@
+{% extends 'calendario/base.html' %}
+
+{% block content %}
+    {% for tarefa in tarefas %}
+        <div class="cont">
+            <h1 class="titulo">{{tarefa.nome_tarefa}}</h1>
+            <h2>{{tarefa.data_tarefa|date:"M d - H:m"}}</h2>
+            <hr>
+            <p> Paciente: {{tarefa.cliente}}</p>
+            <p>{{tarefa.descricao_tarefa}}</p>
+        </div>
+        <br>
+    {% endfor %}
+{% endblock %}
